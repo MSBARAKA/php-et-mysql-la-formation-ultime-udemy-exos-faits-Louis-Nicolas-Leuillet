@@ -1,27 +1,79 @@
 
+<?php
+// hote : localhost - mysql.monserveur.com
+// nom de la base formation_users
+// login : root
+//mdp //root
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     
+</body>
+</html>
+
+
 <?php 
+
+//mysql créer une base de données dans phpmyadmin
+//formation_users
+
+
+//1e table
+//users nombre de colonnes 4 id prenom nom serie_preferee
+
+//valeurs dans cette table voir onglets SQL et Insérer dans phpmyadmin
+
+//se connecter à notre table  Connect/OPERATIONS (LIRE/ECRIRE/MODIFIER/SUPPRIMER)
+//3 manières de se connecter 1 mysql_ =>mySQL, obsolète / 2 mysqli_ => mySQL, amélioréées utilisées de temps en temps/
+// 3 PDO => très sécurisé mySQL, Oracle, PostgreSQL très utilisé dans le monde pro
+//activer pdo sous windows activer php_pdo_mysql sous wamp mais sous xampp
+
+
+
+//récupérer données et les afficher
+//ajouter données et les afficher
+//ajouter données
+//modifier données dans une table
+//supprimer données dans une table
+//Avoir plus d'infos sur nos erreurs mysql
+//jointures entre plusieurs tables internes
+//jointures entre plusieurs tables externes
+
+
+
+
+
 
 //envoi fichier php enctype="multipart/form-data" permet de stocker l'image de manière temporaire
 // <input type="file" name="image"/><br /> type file car je veux envoyer un fichier
 
 // On teste Si on reçoit bien une image et&& on vérifie que l'image est bien réceptionnée sinon error
-if (isset($_FILES ['image']) && $_FILES ['image']['error']==0){
+// if (isset($_FILES ['image']) && $_FILES ['image']['error']==0){
 
-     if ($_FILES  ['image']['size'] <= 3000000){
+//      if ($_FILES  ['image']['size'] <= 3000000){
 
-          $informationImage = pathinfo($_FILES['image']['name']);
-          $extensionImage =  $informationImage['extension'];
-          $extensionArray =  array('png','gif','jpg','jpeg');
+//           $informationImage = pathinfo($_FILES['image']['name']);
+//           $extensionImage =  $informationImage['extension'];
+//           $extensionArray =  array('png','gif','jpg','jpeg');
 
-          if(in_array($extensionImage,$extensionArray)){
+//           if(in_array($extensionImage,$extensionArray)){
 
-               move_uploaded_file($_FILES['image']['tmp_name'],'uploads/'.time().rand().rand().'.'.$extensionImage);
-         echo'Envoi bien réussi !';
-          }
-     }
-// 1 mo = 1 000 000 d'octets on créé u tableau contenant les informations de l'image
+//                move_uploaded_file($_FILES['image']['tmp_name'],'uploads/'.time().rand().rand().'.'.$extensionImage);
+//          echo'Envoi bien réussi !';
+//           }
+//      }
+// // 1 mo = 1 000 000 d'octets on créé u tableau contenant les informations de l'image
 
-}
+// }
 
 
 // $_FILES['image']['name']// NOM voir cette ligne  le fichier se nomme image <input type="file" name="image"/><br /> 
@@ -33,14 +85,14 @@ if (isset($_FILES ['image']) && $_FILES ['image']['error']==0){
 // $_FILES['image']['size']//SIZE
 // $_FILES['image']['error']//ERREUR il va contenir une erreur on vérifie si l'image a bien été réceptionnée
 
-echo '<form method="post" action ="index.php" 
-   enctype="multipart/form-data">
-              <p>
-                 <h1>Formulaire</h1>
-                 <input type="file" name="image"/><br />
-                 <button type="submit">Envoyer</button>
-              </p>
-              </form>';
+// echo '<form method="post" action ="index.php" 
+//    enctype="multipart/form-data">
+//               <p>
+//                  <h1>Formulaire</h1>
+//                  <input type="file" name="image"/><br />
+//                  <button type="submit">Envoyer</button>
+//               </p>
+//               </form>';
 
 
 
